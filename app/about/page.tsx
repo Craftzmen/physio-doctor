@@ -40,7 +40,7 @@ export default function AboutPage() {
         title="Assessment first"
         description="Physiodoctor Physiotherapy Clinic focuses on movement, pain, pediatric care, neurological recovery, and speech."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
-        image={{ src: photo.src, alt: photo.alt }}
+        image={{ src: photo.src, alt: photo.alt, objectPosition: photo.objectPosition }}
       />
       <SectionShell>
         <ul className="grid gap-6 md:grid-cols-3">

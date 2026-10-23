@@ -11,6 +11,7 @@ import {
 import { PageHero } from "@/components/layout/page-hero"
 import { SectionShell } from "@/components/layout/section-shell"
 import { teamRoles } from "@/lib/clinic-content"
+import { galleryPhotos } from "@/lib/remote-images"
 import { getWhatsAppHref } from "@/lib/site-nav"
 
 export const metadata: Metadata = {
@@ -21,6 +22,8 @@ export const metadata: Metadata = {
 const roleIcons = [PersonStandingIcon, HandIcon, SparklesIcon, MessageCircleIcon, HandIcon, BrainIcon]
 
 export default function TeamPage() {
+  const teamPhoto = galleryPhotos.therapy
+
   return (
     <>
       <PageHero
@@ -30,7 +33,11 @@ export default function TeamPage() {
         description="Names and schedules change. These descriptions explain who handles movement, speech, or daily tasks."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Team" }]}
         primaryAction={{ label: "Book on WhatsApp", href: getWhatsAppHref() }}
-        variant="compact"
+        image={{
+          src: teamPhoto.src,
+          alt: teamPhoto.alt,
+          objectPosition: teamPhoto.objectPosition,
+        }}
       />
       <SectionShell tint>
         <ul className="grid gap-4 md:grid-cols-2">

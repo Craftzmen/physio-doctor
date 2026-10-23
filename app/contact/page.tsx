@@ -4,6 +4,7 @@ import { ClockIcon, ContactIcon, MailIcon, PhoneIcon, WalletIcon } from "lucide-
 import { WhatsAppButtonShadcn } from "@/components/layout/whatsapp-button"
 import { PageHero } from "@/components/layout/page-hero"
 import { SectionShell } from "@/components/layout/section-shell"
+import { galleryPhotos } from "@/lib/remote-images"
 import { getWhatsAppHref, siteConfig } from "@/lib/site-nav"
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const whatsappHref = getWhatsAppHref()
+  const clinicPhoto = galleryPhotos.stretch
 
   return (
     <>
@@ -22,7 +24,11 @@ export default function ContactPage() {
         title="Clinic details"
         description={`Reach us during clinic hours. Consultation fee: ${siteConfig.consultationFee}.`}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-        variant="compact"
+        image={{
+          src: clinicPhoto.src,
+          alt: clinicPhoto.alt,
+          objectPosition: clinicPhoto.objectPosition,
+        }}
       />
       <SectionShell>
         <div className="grid gap-8 lg:grid-cols-2">

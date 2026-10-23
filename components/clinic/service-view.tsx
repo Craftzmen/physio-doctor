@@ -33,7 +33,11 @@ export function ServiceView({ service }: { service: (typeof services)[number] })
             message: `Hello, I would like to book ${service.title} at Physiodoctor Physiotherapy Clinic.`,
           }),
         }}
-        image={{ src: heroPhoto.src, alt: heroPhoto.alt }}
+        image={{
+          src: heroPhoto.src,
+          alt: heroPhoto.alt,
+          objectPosition: heroPhoto.objectPosition,
+        }}
       />
 
       <SectionShell tint>
@@ -41,7 +45,14 @@ export function ServiceView({ service }: { service: (typeof services)[number] })
           <div className="space-y-10">
             <section className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
-                <Image src={inlinePhoto.src} alt={inlinePhoto.alt} fill className="object-cover" sizes="400px" />
+                <Image
+                  src={inlinePhoto.src}
+                  alt={inlinePhoto.alt}
+                  fill
+                  className="object-cover"
+                  style={inlinePhoto.objectPosition ? { objectPosition: inlinePhoto.objectPosition } : undefined}
+                  sizes="400px"
+                />
               </div>
               <div className="rounded-lg border border-border bg-white p-5">
                 <h2 className="text-lg font-semibold">Who it is for</h2>

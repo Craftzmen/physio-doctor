@@ -40,6 +40,7 @@ export function HomeServices() {
                     alt={photo.alt}
                     fill
                     className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                    style={photo.objectPosition ? { objectPosition: photo.objectPosition } : undefined}
                     sizes="(min-width: 1024px) 25vw, 50vw"
                   />
                 </div>

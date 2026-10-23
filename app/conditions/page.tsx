@@ -25,7 +25,7 @@ export default function ConditionsPage() {
         title="Guides before your visit"
         description="Not a diagnosis. Sudden severe symptoms need emergency care."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Conditions" }]}
-        image={{ src: photo.src, alt: photo.alt }}
+        image={{ src: photo.src, alt: photo.alt, objectPosition: photo.objectPosition }}
         variant="compact"
       />
       <SectionShell tint>

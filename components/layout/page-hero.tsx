@@ -13,7 +13,7 @@ type PageHeroProps = {
   breadcrumbs?: BreadcrumbItem[]
   primaryAction?: { label: string; href: string }
   secondaryAction?: { label: string; href: string }
-  image?: { src: StaticImageData; alt: string }
+  image?: { src: StaticImageData; alt: string; objectPosition?: string }
   icon?: LucideIcon
   variant?: "default" | "compact"
   className?: string
@@ -73,7 +73,15 @@ export function PageHero({
         </div>
         {image ? (
           <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-border bg-muted/20">
-            <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" priority />
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              priority
+            />
           </div>
         ) : null}
       </div>

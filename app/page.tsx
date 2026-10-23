@@ -4,6 +4,7 @@ import { HomeAppointment } from "@/components/home/home-appointment"
 import { HomeHighlights } from "@/components/home/home-highlights"
 import { HomeConditions } from "@/components/home/home-conditions"
 import { HomeFaq } from "@/components/home/home-faq"
+import { HomeClinicGallery } from "@/components/home/home-clinic-gallery"
 import { HomeHero } from "@/components/home/home-hero"
 import { HomeProcess } from "@/components/home/home-process"
 import { HomeServices } from "@/components/home/home-services"
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <HomeClinicGallery />
       <HomeHighlights />
       <HomeServices />
       <HomeProcess />

@@ -26,7 +26,11 @@ export default function TreatmentsPage() {
         description="Open a department for visit details, who it suits, and what to bring."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Treatments" }]}
         primaryAction={{ label: "Book on WhatsApp", href: getWhatsAppHref() }}
-        image={{ src: heroImage.src, alt: heroImage.alt }}
+        image={{
+          src: heroImage.src,
+          alt: heroImage.alt,
+          objectPosition: heroImage.objectPosition,
+        }}
       />
       <SectionShell tint>
         <ul className="divide-y divide-border rounded-lg border border-border bg-white">
@@ -40,7 +44,14 @@ export default function TreatmentsPage() {
                   className="group flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:gap-6"
                 >
                   <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-md border border-border bg-muted/20">
-                    <Image src={photo.src} alt={photo.alt} fill className="object-cover" sizes="112px" />
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      className="object-cover"
+                      style={photo.objectPosition ? { objectPosition: photo.objectPosition } : undefined}
+                      sizes="112px"
+                    />
                   </div>
                   <div className="min-w-0 flex-1">
                     <h2 className="text-lg font-semibold group-hover:text-primary">{service.title}</h2>
