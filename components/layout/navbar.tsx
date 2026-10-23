@@ -18,6 +18,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -101,54 +102,55 @@ export function Navbar() {
                 <MenuIcon className="size-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm overflow-y-auto">
-              <SheetHeader>
-                <SheetTitle className="text-left">
-                  <BrandLogo size="sm" />
-                </SheetTitle>
+            <SheetContent side="right" className="flex w-[min(100vw,20rem)] flex-col gap-0 p-0 sm:max-w-xs">
+              <SheetHeader className="border-b border-border bg-background px-5 py-4 pr-14 text-left">
+                <SheetTitle className="text-base font-semibold">Menu</SheetTitle>
+                <SheetDescription className="sr-only">Site navigation and clinic contact details</SheetDescription>
               </SheetHeader>
-              <div className="mt-4 space-y-3 rounded-lg border border-border bg-muted/30 p-4 text-sm">
-                <p className="flex items-start gap-2">
-                  <ClockIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <span>
-                    <span className="font-medium text-foreground">Hours:</span> {siteConfig.hours}
-                  </span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <WalletIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <span>
-                    <span className="font-medium text-foreground">Consultation:</span> {siteConfig.consultationFee}
-                  </span>
-                </p>
-                <a href={siteConfig.phoneTel} className="flex items-center gap-2 hover:text-primary">
-                  <PhoneIcon className="size-4 shrink-0" aria-hidden />
-                  {siteConfig.phone}
-                </a>
-                <a href={siteConfig.emailMailto} className="flex items-center gap-2 break-all hover:text-primary">
-                  <MailIcon className="size-4 shrink-0" aria-hidden />
-                  {siteConfig.email}
-                </a>
+              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 py-4">
+                <ul className="space-y-0.5">
+                  {mainNav.map((item) => (
+                    <li key={item.href}>
+                      <SheetClose asChild>
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "block rounded-md px-3 py-3 text-base font-medium hover:bg-muted",
+                            isActive(item.href) && "bg-primary/10 text-primary"
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      </SheetClose>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 space-y-3 rounded-lg border border-border bg-muted/40 p-4 text-sm">
+                  <p className="flex items-start gap-2">
+                    <ClockIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                    <span>
+                      <span className="font-medium text-foreground">Hours:</span> {siteConfig.hours}
+                    </span>
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <WalletIcon className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                    <span>
+                      <span className="font-medium text-foreground">Consultation:</span> {siteConfig.consultationFee}
+                    </span>
+                  </p>
+                  <a href={siteConfig.phoneTel} className="flex items-center gap-2 hover:text-primary">
+                    <PhoneIcon className="size-4 shrink-0" aria-hidden />
+                    {siteConfig.phone}
+                  </a>
+                  <a href={siteConfig.emailMailto} className="flex items-center gap-2 break-all hover:text-primary">
+                    <MailIcon className="size-4 shrink-0" aria-hidden />
+                    {siteConfig.email}
+                  </a>
+                </div>
+                <div className="mt-5 pb-2">
+                  <WhatsAppButton className="w-full" label="Book on WhatsApp" />
+                </div>
               </div>
-              <div className="mt-4">
-                <WhatsAppButton className="w-full" label="Message on WhatsApp" />
-              </div>
-              <ul className="mt-4 space-y-1">
-                {mainNav.map((item) => (
-                  <li key={item.href}>
-                    <SheetClose asChild>
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "block rounded-md px-3 py-2.5 text-sm font-medium hover:bg-muted",
-                          isActive(item.href) && "bg-primary/10 text-primary"
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    </SheetClose>
-                  </li>
-                ))}
-              </ul>
             </SheetContent>
           </Sheet>
         </div>
