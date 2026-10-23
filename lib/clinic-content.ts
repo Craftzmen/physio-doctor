@@ -1,4 +1,11 @@
-export type PhotoKey = "movement" | "hands" | "stairs" | "desk"
+export type PhotoKey =
+  | "cupping"
+  | "ems"
+  | "paediatric"
+  | "traction"
+  | "therasonic"
+  | "mobility"
+  | "elderlyCare"
 
 export type ServicePage = {
   slug: string
@@ -21,7 +28,7 @@ export const services: ServicePage[] = [
     covers: ["Movement and strength checks", "Guided exercise", "Hands-on joint and muscle work", "A home plan you can actually follow"],
     audience: "People recovering from a strain, a stiff joint, surgery, or pain that is changing how they sit, walk, or work.",
     bring: ["Comfortable clothes", "Any imaging reports you already have", "A list of current medicines", "The shoes you usually walk in"],
-    photo: "movement",
+    photo: "mobility",
     featured: true,
   },
   {
@@ -32,7 +39,7 @@ export const services: ServicePage[] = [
     covers: ["Spine and joint movement", "Neck and back stiffness", "Advice for desk and lifting habits", "A decision on whether joint work is suitable"],
     audience: "Adults with recurring neck or back stiffness who want a clinician to check whether hands-on joint care is appropriate.",
     bring: ["Notes on when the pain started", "Work or sport demands", "Previous treatment you have tried"],
-    photo: "stairs",
+    photo: "traction",
     featured: true,
   },
   {
@@ -43,7 +50,7 @@ export const services: ServicePage[] = [
     covers: ["Posture and load sharing", "Gentle joint and soft-tissue work", "Breathing and rib movement when relevant", "Activity changes for the next week"],
     audience: "People who want a broader look at aches that move around, or stiffness after long hours of sitting or standing.",
     bring: ["Clothing you can move in", "A short history of the problem", "Questions you want answered in the visit"],
-    photo: "hands",
+    photo: "cupping",
     featured: true,
   },
   {
@@ -54,7 +61,7 @@ export const services: ServicePage[] = [
     covers: ["Whether needling is suitable", "What you should feel during a session", "How it sits next to exercise", "Hygiene and aftercare"],
     audience: "Adults already being assessed for muscle or joint pain who want to ask about needling as one part of care.",
     bring: ["A list of bleeding or skin conditions", "Current medicines", "Comfortable clothing"],
-    photo: "desk",
+    photo: "ems",
     featured: true,
   },
   {
@@ -65,7 +72,7 @@ export const services: ServicePage[] = [
     covers: ["Motor milestones and gait", "Balance and coordination", "Sport and growth-related aches", "Home practice for caregivers"],
     audience: "Families who want a movement check for a child, from early walking through school sport.",
     bring: ["The child’s usual shoes", "Any pediatric reports", "A favorite toy if it helps them settle"],
-    photo: "stairs",
+    photo: "paediatric",
     featured: true,
   },
   {
@@ -76,7 +83,7 @@ export const services: ServicePage[] = [
     covers: ["Speech clarity", "Voice use", "Swallowing questions", "Practice for home or school"],
     audience: "Children and adults whose speech, voice, or swallowing is getting in the way of daily life.",
     bring: ["Examples of words or situations that are hard", "School or medical notes if you have them", "A quiet slot of time for the session"],
-    photo: "desk",
+    photo: "paediatric",
     featured: true,
   },
   {
@@ -87,7 +94,7 @@ export const services: ServicePage[] = [
     covers: ["Balance and transfers", "Walking practice", "Arm and hand tasks", "Caregiver coaching"],
     audience: "People leaving hospital, or living with a neurological condition, who need structured movement practice.",
     bring: ["Current therapy notes", "The walking aid you use", "A family member if transfers are difficult"],
-    photo: "movement",
+    photo: "elderlyCare",
     featured: true,
   },
   {
@@ -98,7 +105,7 @@ export const services: ServicePage[] = [
     covers: ["Daily tasks such as dressing and cooking", "Hand and arm function", "Work or school setup", "Simple equipment ideas"],
     audience: "People whose injury, illness, or development makes ordinary tasks harder than they used to be.",
     bring: ["A description of a typical day", "Photos of a difficult setup if useful", "Any splints you already use"],
-    photo: "hands",
+    photo: "mobility",
     featured: true,
   },
   {
@@ -109,7 +116,7 @@ export const services: ServicePage[] = [
     covers: ["Coping with persistent pain", "Behavior concerns in children", "Stress around recovery", "When to seek urgent help instead"],
     audience: "Adults and families who want a psychologist involved alongside physical rehab.",
     bring: ["What you hope will be different", "Any previous therapy notes you are willing to share"],
-    photo: "desk",
+    photo: "paediatric",
     featured: false,
   },
   {
@@ -120,7 +127,7 @@ export const services: ServicePage[] = [
     covers: ["Meals around recovery", "Weight and energy questions", "Sport or growth needs", "How food advice fits medical care you already have"],
     audience: "People in rehab who want food advice from someone who understands the physical plan.",
     bring: ["A rough note of yesterday’s meals", "Diet restrictions", "Relevant lab results if you have them"],
-    photo: "desk",
+    photo: "therasonic",
     featured: false,
   },
   {
@@ -131,7 +138,7 @@ export const services: ServicePage[] = [
     covers: ["Who qualifies for a home visit", "What the therapist can do without gym equipment", "How caregivers join the session", "When a clinic visit is the better choice"],
     audience: "Patients after surgery, with limited walking, or with a home setup that needs to be seen in person.",
     bring: ["A clear path to the room you will use", "Someone who can open the door", "Your current exercise sheet"],
-    photo: "stairs",
+    photo: "elderlyCare",
     featured: false,
   },
 ]

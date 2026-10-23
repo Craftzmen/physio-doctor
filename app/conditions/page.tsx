@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 export default function ConditionsPage() {
-  const photo = galleryPhotos.hands
+  const photo = galleryPhotos.mobility
 
   return (
     <>
